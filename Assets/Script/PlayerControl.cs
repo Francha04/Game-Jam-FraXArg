@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static PlayerControl current;
-    private Vector2 target;
-    public float speed=5f;
+    public static PlayerControl current; //We use a singleton
+    private Vector2 target; //Coordinate of where the player want to go
+    public float speed=5f; //speed of the player character.
 
 
     private void Awake()
@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     }
     private void Start()
     {
-        target = transform.position;
+        target = transform.position; //To avoid the character move before the player click somewhere.
     }
 
 
@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
         //Check if user is clicking and get the coordinates if he does.
         if (Input.GetMouseButtonDown(0))
         {
-            target = new Vector2(mousePos.x, Mathf.Clamp(mousePos.y, SceneInformation.current.yMin, SceneInformation.current.yMax));
+            target = new Vector2(mousePos.x, Mathf.Clamp(mousePos.y, SceneInformation.current.yMin, SceneInformation.current.yMax)); //Using Math.Clamp to avoid the character quit the walkable area.
         }
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime*speed);
         //Check if character is quiting the scene
