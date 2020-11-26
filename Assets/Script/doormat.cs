@@ -8,25 +8,13 @@ public class doormat : MonoBehaviour
     public GameObject newState; //A picture of the doormat after the character bent it to look what is below.
     public GameObject key;
 
+  
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnPointerClick(PointerEventData data)
+    public void OnMouseDown()
     {
         ClickReaction();
     }
-
-   public void ClickReaction()
+    public void ClickReaction()
     {
         //replace the old picture by the new one
         newState.SetActive(true);
