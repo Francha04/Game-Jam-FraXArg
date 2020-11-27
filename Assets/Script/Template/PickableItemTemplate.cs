@@ -56,5 +56,6 @@ public class PickableItemTemplate : MonoBehaviour
         PickableItemTemplate.Instance.isClicked = true;
         gameObject.SetActive(false);
         UIManager.instance.ActivateUIItem(UIManager.instance.PickableItemTemplate);
+    DataBase.Instance.hasPickableItemTemplate = true;
     }*/
 }

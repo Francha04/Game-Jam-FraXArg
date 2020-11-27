@@ -2,39 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IrreversibleClickableItem : MonoBehaviour
+public class IrreversibleClickableItemTemplate : MonoBehaviour
 {
-    private bool isClicked;
-    public GameObject newState; //The picture of the IrreversibleClickableItem after the character interact with.
+    public GameObject newState; //The picture of the IrreversibleClickableItemTemplate after the character interact with.
     private bool isPointing;
 
-    private static IrreversibleClickableItem instance = null;
-    public static IrreversibleClickableItem Instance
-    {
-        get { return instance; }
-    }
-    //**
-
-    void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         isPointing = false;
-        gameObject.SetActive(!isClicked);
-        newState.SetActive(isClicked);
+        SetGoodStateOfActivation();
     }
 
     // Update is called once per frame
@@ -62,7 +40,7 @@ public class IrreversibleClickableItem : MonoBehaviour
     public void ClickReaction()
     {
         //Save the fact the player click on this object
-        isClicked = true;
+        DataBase.Instance.isIrreversibleClickableItemTemplateActivated = true;
         //replace the old picture by the new one
         newState.SetActive(true);
         this.gameObject.SetActive(false);
@@ -72,5 +50,11 @@ public class IrreversibleClickableItem : MonoBehaviour
     private bool CanPlayerInteract()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void SetGoodStateOfActivation()
+    {
+        gameObject.SetActive(!DataBase.Instance.isIrreversibleClickableItemTemplateActivated);
+        newState.SetActive(DataBase.Instance.isIrreversibleClickableItemTemplateActivated);
     }
 }

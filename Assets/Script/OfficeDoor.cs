@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doormat : MonoBehaviour
+public class OfficeDoor : MonoBehaviour
 {
-    public GameObject newState; //The picture of the Doormat after the character interact with.
+    public GameObject newState; //The picture of the OfficeDoor after the character interact with.
     private bool isPointing;
 
 
@@ -40,7 +40,7 @@ public class Doormat : MonoBehaviour
     public void ClickReaction()
     {
         //Save the fact the player click on this object
-        DataBase.Instance.isDoormatActivated = true;
+        DataBase.Instance.isOfficeDoorActivated = true;
         //replace the old picture by the new one
         newState.SetActive(true);
         this.gameObject.SetActive(false);
@@ -49,12 +49,14 @@ public class Doormat : MonoBehaviour
     //This fonction return true if Player have the item to interact with this object (like the screwdriver for the vent)
     private bool CanPlayerInteract()
     {
-        return true;
+        Debug.Log(DataBase.Instance.hasOfficeKey);
+        return DataBase.Instance.hasOfficeKey;
+        
     }
 
     public void SetGoodStateOfActivation()
     {
-        gameObject.SetActive(!DataBase.Instance.isDoormatActivated);
-        newState.SetActive(DataBase.Instance.isDoormatActivated);
+        gameObject.SetActive(!DataBase.Instance.isOfficeDoorActivated);
+        newState.SetActive(DataBase.Instance.isOfficeDoorActivated);
     }
 }

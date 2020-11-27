@@ -308,10 +308,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 592445850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4be3c048a8ae99b47b7c2b809ee2cf8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 86d62f5d18cc52f498d31968b8bb87ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRugMoved: 0
+  hasOfficeKey: 0
+  hasPurpleKey: 0
+  hasBlueKey: 0
+  hasGreenKey: 0
+  hasRedKey: 0
+  hasScrewdriver: 0
 --- !u!1 &638314233
 GameObject:
   m_ObjectHideFlags: 0

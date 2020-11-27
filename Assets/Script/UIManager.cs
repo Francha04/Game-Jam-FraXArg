@@ -24,13 +24,14 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
-        OfficeKey.SetActive(false);
-        PurpleKey.SetActive(false);
-        BlueKey.SetActive(false);
-        GreenKey.SetActive(false);
-        RedKey.SetActive(false);
-        Screwdriver.SetActive(false);
+            OfficeKey.SetActive(DataBase.Instance.hasOfficeKey);
+            PurpleKey.SetActive(DataBase.Instance.hasPurpleKey);
+            BlueKey.SetActive(DataBase.Instance.hasBlueKey);
+            GreenKey.SetActive(DataBase.Instance.hasGreenKey);
+            RedKey.SetActive(DataBase.Instance.hasRedKey);
+            Screwdriver.SetActive(DataBase.Instance.hasScrewdriver);
     }
+
     public void ActivateUIItem(GameObject x)
     {
         x.SetActive(!x.activeSelf);

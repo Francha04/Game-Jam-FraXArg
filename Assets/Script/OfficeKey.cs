@@ -56,6 +56,7 @@ public class OfficeKey : MonoBehaviour
         OfficeKey.Instance.isClicked = true;
         gameObject.SetActive(false);
         UIManager.instance.ActivateUIItem(UIManager.instance.OfficeKey);
+        DataBase.Instance.hasOfficeKey = true;
     }
 
 }

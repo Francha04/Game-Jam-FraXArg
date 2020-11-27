@@ -25,6 +25,7 @@ public class SceneInformation : MonoBehaviour
         inventoryData = PlayerPrefs.GetInt("inventoryData");
     }
 
+
     // Update is called once per frame
     void Update()
     {
