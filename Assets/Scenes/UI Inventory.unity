@@ -777,16 +777,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1947613063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e98a370715ebca42bf685dc946d351a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1621bdd7c7a03d44886f223da3e94673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OfficeKey: {fileID: 2131702943}
-  PurpleKey: {fileID: 225882822}
-  BlueKey: {fileID: 1070829352}
-  GreenKey: {fileID: 119890029}
-  RedKey: {fileID: 1210304548}
-  Screwdriver: {fileID: 1685453865}
-  instance: {fileID: 1947613064}
+  OfficeKey: {fileID: 0}
+  PurpleKey: {fileID: 0}
+  BlueKey: {fileID: 0}
+  GreenKey: {fileID: 0}
+  RedKey: {fileID: 0}
+  Screwdriver: {fileID: 0}
 --- !u!4 &1947613065
 Transform:
   m_ObjectHideFlags: 0

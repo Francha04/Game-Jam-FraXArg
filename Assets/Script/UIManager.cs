@@ -31,6 +31,10 @@ public class UIManager : MonoBehaviour
         RedKey.SetActive(false);
         Screwdriver.SetActive(false);
     }
+    private void Start()
+    {
+        DataBase.Instance.       
+    }
     public void ActivateUIItem(GameObject x)
     {
         x.SetActive(!x.activeSelf);
