@@ -12,6 +12,7 @@ public class DataBase : MonoBehaviour
     public bool hasScrewdriver;
     public bool isDoormatActivated;
     public bool isOfficeDoorActivated;
+    public bool isVentOpen;
     public bool isIrreversibleClickableItemTemplateActivated;
     public bool isReversibleClickableItemTemplateActivated;
 
@@ -54,6 +55,7 @@ public class DataBase : MonoBehaviour
         hasPurpleKey = false;
         hasRedKey = false;
         hasScrewdriver=false;
+        isVentOpen = false;
         PlayerPrefs.SetInt("startingSide", 0);
     }
 }

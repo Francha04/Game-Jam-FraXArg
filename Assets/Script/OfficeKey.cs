@@ -28,13 +28,12 @@ public class OfficeKey : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         gameObject.SetActive(!isClicked);
     }
 
-    // Update is called once per frame
     public void OnMouseDown()
     {
         ClickReaction();
@@ -53,10 +52,9 @@ public class OfficeKey : MonoBehaviour
 
     private void ClickReaction()
     {
-        OfficeKey.Instance.isClicked = true;
-        gameObject.SetActive(false);
+        OfficeKey.Instance.isClicked = true; 
         UIManager.instance.ActivateUIItem(UIManager.instance.OfficeKey);
         DataBase.Instance.hasOfficeKey = true;
+        gameObject.SetActive(false);
     }
-
 }

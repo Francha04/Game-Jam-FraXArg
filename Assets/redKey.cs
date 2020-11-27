@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class screwdriver : MonoBehaviour
+public class redKey : MonoBehaviour
 {
     public bool isClicked = false;
     private bool isPointing = false;
     [SerializeField] private GameObject child;
     //singleton properties **
-    private static screwdriver instance = null;
-    public static screwdriver Instance
+    private static redKey instance = null;
+    public static redKey Instance
     {
         get { return instance; }
     }
@@ -50,8 +50,9 @@ public class screwdriver : MonoBehaviour
 
     private void ClickReaction()
     {
-        screwdriver.Instance.isClicked = true;
+        redKey.Instance.isClicked = true;
+        UIManager.instance.ActivateUIItem(UIManager.instance.RedKey);
+        DataBase.Instance.hasRedKey = true;
         gameObject.SetActive(false);
-        UIManager.instance.ActivateUIItem(UIManager.instance.Screwdriver);
     }
 }

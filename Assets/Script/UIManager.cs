@@ -24,20 +24,20 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
-            OfficeKey.SetActive(DataBase.Instance.hasOfficeKey);
-            PurpleKey.SetActive(DataBase.Instance.hasPurpleKey);
-            BlueKey.SetActive(DataBase.Instance.hasBlueKey);
-            GreenKey.SetActive(DataBase.Instance.hasGreenKey);
-            RedKey.SetActive(DataBase.Instance.hasRedKey);
-            Screwdriver.SetActive(DataBase.Instance.hasScrewdriver);
+        OfficeKey.SetActive(DataBase.Instance.hasOfficeKey);
+        PurpleKey.SetActive(DataBase.Instance.hasPurpleKey);
+        BlueKey.SetActive(DataBase.Instance.hasBlueKey);
+        GreenKey.SetActive(DataBase.Instance.hasGreenKey);
+        RedKey.SetActive(DataBase.Instance.hasRedKey);
+        Screwdriver.SetActive(DataBase.Instance.hasScrewdriver);
     }
 
-    private void Start()
-    {
-        DataBase.Instance.       
-    }
     public void ActivateUIItem(GameObject x)
     {
-        x.SetActive(!x.activeSelf);
+        x.SetActive(true);
+    }
+    public void DeactivateUIItem(GameObject x) 
+    {
+        x.SetActive(false);
     }
 }

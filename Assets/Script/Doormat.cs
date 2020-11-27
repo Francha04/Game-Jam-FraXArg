@@ -1,29 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Doormat : MonoBehaviour
+public class doormat : MonoBehaviour
 {
-    public GameObject newState; //The picture of the Doormat after the character interact with.
+
+    private bool isClicked;
+    public GameObject newState; //The picture of the Doormat after the character bent it to look what is below.
     private bool isPointing;
 
+    private static doormat instance = null;
+    public static doormat Instance
+    {
+        get { return instance; }
+    }
+    //**
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         isPointing = false;
-        SetGoodStateOfActivation();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        gameObject.SetActive(!isClicked);
+        newState.SetActive(isClicked);
     }
 
     public void OnMouseDown()
     {
-        if (CanPlayerInteract()) ClickReaction();
+        ClickReaction();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,21 +57,10 @@ public class Doormat : MonoBehaviour
     public void ClickReaction()
     {
         //Save the fact the player click on this object
-        DataBase.Instance.isDoormatActivated = true;
+        isClicked = true;
         //replace the old picture by the new one
         newState.SetActive(true);
         this.gameObject.SetActive(false);
     }
 
-    //This fonction return true if Player have the item to interact with this object (like the screwdriver for the vent)
-    private bool CanPlayerInteract()
-    {
-        return true;
-    }
-
-    public void SetGoodStateOfActivation()
-    {
-        gameObject.SetActive(!DataBase.Instance.isDoormatActivated);
-        newState.SetActive(DataBase.Instance.isDoormatActivated);
-    }
 }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Doormat : MonoBehaviour
+public class doormat : MonoBehaviour
 {
 
     private bool isClicked;
     public GameObject newState; //The picture of the Doormat after the character bent it to look what is below.
     private bool isPointing;
 
-    private static Doormat instance = null;
-    public static Doormat Instance
+    private static doormat instance = null;
+    public static doormat Instance
     {
         get { return instance; }
     }
@@ -31,18 +31,11 @@ public class Doormat : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         isPointing = false;
         gameObject.SetActive(!isClicked);
         newState.SetActive(isClicked);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnMouseDown()

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class OfficeDoor : MonoBehaviour
 {
-    public GameObject newState; //The picture of the OfficeDoor after the character interact with.
+    public GameObject newState; 
     private bool isPointing;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         isPointing = false;
@@ -49,9 +47,7 @@ public class OfficeDoor : MonoBehaviour
     //This fonction return true if Player have the item to interact with this object (like the screwdriver for the vent)
     private bool CanPlayerInteract()
     {
-        Debug.Log(DataBase.Instance.hasOfficeKey);
-        return DataBase.Instance.hasOfficeKey;
-        
+        return DataBase.Instance.hasOfficeKey;        
     }
 
     public void SetGoodStateOfActivation()
