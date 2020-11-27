@@ -21,6 +21,7 @@ public class screwdriver : MonoBehaviour
     }
     void Awake()
     {
+        if (DataBase.Instance.hasScrewdriver) { Destroy(this.gameObject); }
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -30,7 +31,6 @@ public class screwdriver : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
     public void OnMouseDown()
     {
