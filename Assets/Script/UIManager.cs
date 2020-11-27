@@ -32,6 +32,10 @@ public class UIManager : MonoBehaviour
             Screwdriver.SetActive(DataBase.Instance.hasScrewdriver);
     }
 
+    private void Start()
+    {
+        DataBase.Instance.       
+    }
     public void ActivateUIItem(GameObject x)
     {
         x.SetActive(!x.activeSelf);
