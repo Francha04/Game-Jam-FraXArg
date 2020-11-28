@@ -8,6 +8,7 @@ public class blueKey : MonoBehaviour
     public bool isClicked = false;
     private bool isPointing = false;
     [SerializeField] private GameObject child;
+    public GameObject soundM;
     //singleton properties **
     private static blueKey instance = null;
     public static blueKey Instance
@@ -55,6 +56,7 @@ public class blueKey : MonoBehaviour
         blueKey.Instance.isClicked = true;
         UIManager.instance.ActivateUIItem(UIManager.instance.BlueKey);
         DataBase.Instance.hasBlueKey = true;
+        soundM.GetComponent<AudioSource>().Play();
         gameObject.SetActive(false);
     }
 }

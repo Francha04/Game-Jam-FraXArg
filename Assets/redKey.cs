@@ -9,6 +9,7 @@ public class redKey : MonoBehaviour
     [SerializeField] private GameObject child;
     //singleton properties **
     private static redKey instance = null;
+    public GameObject soundM;
     public static redKey Instance
     {
         get { return instance; }
@@ -52,6 +53,7 @@ public class redKey : MonoBehaviour
     {
         redKey.Instance.isClicked = true;
         UIManager.instance.ActivateUIItem(UIManager.instance.RedKey);
+        soundM.GetComponent<AudioSource>().Play();
         DataBase.Instance.hasRedKey = true;
         gameObject.SetActive(false);
     }

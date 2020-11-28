@@ -7,6 +7,7 @@ public class ventilationOpen : MonoBehaviour
     public GameObject newState; //The picture of the IrreversibleClickableItemTemplate after the character interact with.
     private bool isPointing;
     [SerializeField]private GameObject key;
+    public GameObject soundM;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class ventilationOpen : MonoBehaviour
         //Save the fact the player click on this object
         DataBase.Instance.isVentOpen = true;
         //replace the old picture by the new one
+        soundM.GetComponent<AudioSource>().Play();
         newState.SetActive(true);
         key.SetActive(true);
         this.gameObject.SetActive(false);

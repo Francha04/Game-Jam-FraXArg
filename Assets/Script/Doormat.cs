@@ -9,7 +9,7 @@ public class doormat : MonoBehaviour
     private bool isClicked;
     public GameObject newState; //The picture of the Doormat after the character bent it to look what is below.
     private bool isPointing;
-
+    public GameObject soundM;
     private static doormat instance = null;
     public static doormat Instance
     {
@@ -60,6 +60,7 @@ public class doormat : MonoBehaviour
         isClicked = true;
         //replace the old picture by the new one
         newState.SetActive(true);
+        soundM.GetComponent<AudioSource>().Play();
         this.gameObject.SetActive(false);
     }
 

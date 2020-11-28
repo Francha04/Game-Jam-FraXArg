@@ -8,7 +8,7 @@ public class lightSwitch : MonoBehaviour
     private bool isPointing;
     public GameObject darkScreen;
     public GameObject greenKey;
-
+    public GameObject soundM;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class lightSwitch : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (CanPlayerInteract()) ClickReaction();
+        ClickReaction();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,16 +39,13 @@ public class lightSwitch : MonoBehaviour
         DataBase.Instance.isLightOff = !DataBase.Instance.isLightOff;
         //replace the old picture by the new one
         newState.SetActive(true);
+        soundM.GetComponent<AudioSource>().Play();
         darkScreen.SetActive(DataBase.Instance.isLightOff);
         if (!DataBase.Instance.hasGreenKey) { greenKey.SetActive(DataBase.Instance.isLightOff); }
         this.gameObject.SetActive(false);
     }
 
     //This fonction return true if Player have the item to interact with this object (like the screwdriver for the vent)
-    private bool CanPlayerInteract()
-    {
-        return true;
-    }
 
     public void SetGoodStateOfActivation()
     {

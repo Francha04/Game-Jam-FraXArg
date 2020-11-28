@@ -10,6 +10,7 @@ public class lever : MonoBehaviour
     public GameObject key;
     private bool isPointing;
     public int elevatorHeight;
+    public GameObject soundM;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class lever : MonoBehaviour
             key.SetActive(true);
         } else { newPos.y = newPos.y - elevatorHeight; }
         ship.transform.position = newPos;
+        soundM.GetComponent<AudioSource>().Play();
         leverOn.SetActive(!leverOn.activeSelf);
         leverOff.SetActive(!leverOff.activeSelf);
         
