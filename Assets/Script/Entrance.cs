@@ -7,12 +7,14 @@ public class Entrance : MonoBehaviour
 {
     public string nextLevel; //The name of the scene this entrance leads
 
-    public void OnTriggerStay(Collider collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        if (PlayerControl.current.IsImmobile()) //Test to avoid going in the new scene if the player is just passing by the trigger
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(nextLevel);
+            if ((PlayerControl.current.IsImmobile()) && (DataBase.Instance.isOfficeDoorActivated)) //Test to avoid going in the new scene if the player is just passing by the trigger
+            {
+                SceneManager.LoadScene(nextLevel);
+            }
         }
     }
-
 }

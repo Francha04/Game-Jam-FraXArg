@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class greenKey : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class greenKey : MonoBehaviour
     }
     void Start()
     {
-        gameObject.SetActive(!isClicked);
+        if (SceneManager.GetActiveScene().name == "GarageDoor") { gameObject.SetActive(!isClicked); }
+        else { this.gameObject.SetActive(false); };
     }
     public void OnMouseDown()
     {

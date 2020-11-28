@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class loseScreen : MonoBehaviour
 {
-    public timerManager timeManager;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            DataBase.Instance.Initialise();
-            SceneManager.LoadScene("TitleSreen");
-            timeManager.turnOnTimer();
+            SceneManager.LoadScene("TitleSreen");        
         }
     }
 }

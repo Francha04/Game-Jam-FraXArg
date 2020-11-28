@@ -9,7 +9,7 @@ public class timerManager : MonoBehaviour
     private bool timerIsActive = false;
 
     private static timerManager instance = null;
-    public static timerManager Instance
+    public static timerManager _Instance
     {
         get { return instance; }
     }
@@ -26,7 +26,6 @@ public class timerManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
     void Update()
     {
         if (timerIsActive)
@@ -40,7 +39,6 @@ public class timerManager : MonoBehaviour
                 SceneManager.LoadScene("Lose Screen");
             }
         }
-
     }
     public void turnOnTimer() {
         myTimer = 600;

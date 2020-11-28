@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class blueKey : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class blueKey : MonoBehaviour
     }
     void Start()
     {
-        gameObject.SetActive(!isClicked);
+        if (SceneManager.GetActiveScene().name == "Ship") { gameObject.SetActive(!isClicked); }
+        else { this.gameObject.SetActive(false);  };
     }
     public void OnMouseDown()
     {
