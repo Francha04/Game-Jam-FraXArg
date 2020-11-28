@@ -7,6 +7,7 @@ public class OfficeKey : MonoBehaviour
     public bool isClicked=false;
     private bool isPointing = false;
     [SerializeField] private GameObject child;
+    public GameObject soundM;
     //singleton properties **
     private static OfficeKey instance = null;
     public static OfficeKey Instance
@@ -55,6 +56,7 @@ public class OfficeKey : MonoBehaviour
         OfficeKey.Instance.isClicked = true; 
         UIManager.instance.ActivateUIItem(UIManager.instance.OfficeKey);
         DataBase.Instance.hasOfficeKey = true;
+        soundM.GetComponent<AudioSource>().Play();
         gameObject.SetActive(false);
     }
 }

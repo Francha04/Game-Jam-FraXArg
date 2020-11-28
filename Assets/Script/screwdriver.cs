@@ -9,6 +9,7 @@ public class screwdriver : MonoBehaviour
     [SerializeField] private GameObject child;
     //singleton properties **
     private static screwdriver instance = null;
+    public GameObject soundM;
     public static screwdriver Instance
     {
         get { return instance; }
@@ -53,6 +54,7 @@ public class screwdriver : MonoBehaviour
         Instance.isClicked = true;
         DataBase.Instance.hasScrewdriver = true;
         UIManager.instance.ActivateUIItem(UIManager.instance.Screwdriver);
+        soundM.GetComponent<AudioSource>().Play();
         gameObject.SetActive(false);
     }
 }

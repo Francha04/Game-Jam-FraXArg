@@ -7,6 +7,7 @@ public class greenKey : MonoBehaviour
 {
     public bool isClicked = false;
     private bool isPointing = false;
+    public GameObject soundM;
     [SerializeField] private GameObject child;
     //singleton properties **
     private static greenKey instance = null;
@@ -55,6 +56,7 @@ public class greenKey : MonoBehaviour
         greenKey.Instance.isClicked = true;
         UIManager.instance.ActivateUIItem(UIManager.instance.GreenKey);
         DataBase.Instance.hasGreenKey = true;
+        soundM.GetComponent<AudioSource>().Play();
         gameObject.SetActive(false);
     }
 }
