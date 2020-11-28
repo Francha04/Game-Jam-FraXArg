@@ -7,6 +7,7 @@ public class lever : MonoBehaviour
     public GameObject leverOn;
     public GameObject leverOff;
     public GameObject ship;
+    public GameObject key;
     private bool isPointing;
     public int elevatorHeight;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class lever : MonoBehaviour
         Vector3 newPos = new Vector3(ship.transform.position.x, ship.transform.position.y, ship.transform.position.z);
         if (DataBase.Instance.isElevatorUp) {
             newPos.y = newPos.y + elevatorHeight;
+            key.SetActive(true);
         } else { newPos.y = newPos.y - elevatorHeight; }
         ship.transform.position = newPos;
         leverOn.SetActive(!leverOn.activeSelf);
