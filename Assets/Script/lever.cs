@@ -17,6 +17,12 @@ public class lever : MonoBehaviour
         isPointing = false;
         leverOn.SetActive(DataBase.Instance.isElevatorUp);
         leverOff.SetActive(!DataBase.Instance.isElevatorUp);
+        /* if (DataBase.Instance.isElevatorUp) {
+            Vector3 newPos = new Vector3(ship.transform.position.x, ship.transform.position.y, ship.transform.position.z);
+            newPos.y = newPos.y + elevatorHeight;
+            key.SetActive(true);
+            ship.transform.position = newPos;
+        } */
     }
     private void OnMouseDown()
     {

@@ -28,7 +28,6 @@ public class greenKey : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {

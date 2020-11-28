@@ -26,7 +26,6 @@ public class ReversibleClickableItem : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -37,11 +36,6 @@ public class ReversibleClickableItem : MonoBehaviour
         newState.SetActive(isClicked);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void OnMouseDown()
     {

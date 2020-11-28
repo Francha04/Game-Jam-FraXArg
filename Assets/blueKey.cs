@@ -28,7 +28,6 @@ public class blueKey : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {

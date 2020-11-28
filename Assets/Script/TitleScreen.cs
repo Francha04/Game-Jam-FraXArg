@@ -10,8 +10,7 @@ public class TitleScreen : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             DataBase.Instance.Initialise();       
-            timerManager._Instance.turnOnTimer();
-            SceneManager.LoadScene("GarageDoor");
+            SceneManager.LoadScene("Plot scene");
         }
     }
 }
