@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
-    // Update is called once per frame
+    public timerManager timeManager;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             DataBase.Instance.Initialise();
             SceneManager.LoadScene("GarageDoor");
+            timeManager.turnOnTimer();
         }
     }
 }

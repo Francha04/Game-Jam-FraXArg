@@ -18,7 +18,7 @@ public class DataBase : MonoBehaviour
     public bool isLightOff;
     public bool isIrreversibleClickableItemTemplateActivated;
     public bool isReversibleClickableItemTemplateActivated;
-    
+    public GameObject gameTimer;
 
 
     //singleton properties **

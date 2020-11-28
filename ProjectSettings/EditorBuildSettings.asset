@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Script/Template/Scenes/TitleSreen.unity
     guid: c2b81646dc9136749a8aef583cf0f63e
+  - enabled: 1
+    path: Assets/Script/Template/Scenes/Win Screen.unity
+    guid: 5aa42cbb6c66d0e41b35d8df85fbb5c0
+  - enabled: 1
+    path: Assets/Script/Template/Scenes/Lose Screen.unity
+    guid: 9a23259ade8d5ca458e824496d39b3f5
   m_configObjects: {}
